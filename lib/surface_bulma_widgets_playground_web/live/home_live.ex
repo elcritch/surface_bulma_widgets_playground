@@ -8,8 +8,8 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
   def render(assigns) do
     ~H"""
-      <Columns>
-        <Column>
+      <Columns multiline>
+        <Column width=4>
           <CardWithIcon icon="fa-power-off" title="Getting started">
             <p>
               Start building <strong>rich interactive user-interfaces</strong>,
@@ -27,6 +27,17 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               help you to get started.
             </p>
             <p><LiveRedirect label="Learn more" to="/documentation" /></p>
+          </CardWithIcon>
+        </Column>
+        <Column width=4>
+          <CardWithIcon icon="fa-code" title="UI Components">
+            <p>
+              A set of common components that can be used in
+              your projects, including buttons, dialogs, table grids
+              and more. You can also use them as templates to
+              create your own custom components.
+            </p>
+            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
           </CardWithIcon>
         </Column>
         <Column width=4>
