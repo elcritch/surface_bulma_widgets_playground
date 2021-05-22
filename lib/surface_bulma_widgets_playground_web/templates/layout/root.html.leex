@@ -12,7 +12,7 @@
   <body>
     <header>
       <!-- START NAV -->
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar box is-paddingless " role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item has-background-success" href="https://www.phoenixframework.org/">
             <img src="https://www.phoenixframework.org/images/phoenix-78c0fd3233522383ea9093ef877c8851.png" width="112" height="28">
@@ -71,6 +71,15 @@
       </nav>
 
     </header>
-    <%= @inner_content %>
+
+    <section class="section" style="padding: 2rem 1.5rem">
+      <div class="container">
+        <div class="section" style="padding: 0rem 1.5rem">
+          <div class="container">
+            <%= @inner_content %>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
