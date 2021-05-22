@@ -10,8 +10,10 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   alias SurfaceBulmaWidgets.Layouts.{Columns, Column}
 
   alias SurfaceBulmaWidgets.UI.RangedSlider
+  alias SurfaceBulmaWidgets.UI.NumberDisplay
 
-  data count, :integer, default: 10
+  data count1, :integer, default: 10
+  data count2, :integer, default: 80
 
   def render(assigns) do
     ~H"""
@@ -47,7 +49,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
           </CardWithIcon>
         </Column>
-        <Column width=4>
+        <Column width=6>
           <CardWithIcon icon="fa-code" title="UI Components">
             <p>
               A set of common components that can be used in
@@ -56,8 +58,10 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               create your own custom components.
             </p>
 
-            <RangedSlider id="rl1" var={{bind(@count)}}>
-            </RangedSlider>
+            <RangedSlider id="rl1" var={{bind(@count1)}}/>
+            <RangedSlider id="rl2" var={{bind(@count2)}}/>
+
+            <NumberDisplay id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
 
             <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
           </CardWithIcon>
@@ -66,8 +70,4 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
     """
   end
 
-  def handle_info({:update_bind, name, value} = msg, socket) do
-    Logger.info("updating: #{inspect msg}")
-    {:noreply, socket |> assign([{name, value}]) }
-  end
 end
