@@ -11,7 +11,11 @@ use Mix.Config
 config :surface_bulma_widgets_playground, SurfaceBulmaWidgetsPlaygroundWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "ZohewvWlMgvGXd33rthFPzPZwPOg6TowMMBLjx7BRNRdWwIYXT2fMno69n8GmyTL",
-  render_errors: [view: SurfaceBulmaWidgetsPlaygroundWeb.ErrorView, accepts: ~w(html json), layout: false],
+  render_errors: [
+    view: SurfaceBulmaWidgetsPlaygroundWeb.ErrorView,
+    accepts: ~w(html json),
+    layout: false
+  ],
   pubsub_server: SurfaceBulmaWidgetsPlayground.PubSub,
   live_view: [signing_salt: "DnN4n++A"]
 

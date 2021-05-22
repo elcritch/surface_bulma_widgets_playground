@@ -35,7 +35,6 @@ defmodule SurfaceBulmaWidgetsPlayground.MixProject do
     [
       {:surface, "~> 0.4.0", override: true},
       {:surface_bulma_widgets, "~> 0.1.0", path: "../surface_bulma_widgets"},
-
       {:phoenix, "~> 1.5.8"},
       {:phoenix_live_view, "~> 0.15.1"},
       {:floki, ">= 0.27.0", only: :test},
