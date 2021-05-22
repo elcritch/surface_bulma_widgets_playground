@@ -15,7 +15,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 Add mix deps:
 
 ```elixir
-      {:surface, "~> 0.4.0"},
+      {:surface, "~> 0.4.0", override: true},
       {:surface_bulma_widgets, "~> 0.1.0", path: "../surface_bulma_widgets"},
 ```
 

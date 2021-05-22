@@ -33,7 +33,7 @@ defmodule SurfaceBulmaWidgetsPlayground.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:surface, "~> 0.4.0"},
+      {:surface, "~> 0.4.0", override: true},
       {:surface_bulma_widgets, "~> 0.1.0", path: "../surface_bulma_widgets"},
 
       {:phoenix, "~> 1.5.8"},
