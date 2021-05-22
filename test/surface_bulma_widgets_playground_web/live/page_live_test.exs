@@ -1,4 +1,4 @@
-defmodule SurfaceBulmaWidgetsPlaygroundWeb.PageLiveTest do
+defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLiveTest do
   use SurfaceBulmaWidgetsPlaygroundWeb.ConnCase
 
   import Phoenix.LiveViewTest

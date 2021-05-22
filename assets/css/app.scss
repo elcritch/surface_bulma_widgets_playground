@@ -1,5 +1,9 @@
 /* This file is for your main application css. */
-@import "./phoenix.css";
+// @import "./phoenix.css";
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/css-width-scale-dc/css/css-width-scale.css";
 
 /* LiveView specific classes for your customizations */
 .phx-no-feedback.invalid-feedback,

@@ -17,7 +17,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.Router do
   scope "/", SurfaceBulmaWidgetsPlaygroundWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", HomePageLive, :index
   end
 
   # Other scopes may use custom stacks.

@@ -24,4 +24,23 @@ Add CSS deps:
 ```sh
 npm install bulma
 npm install bulma-extensions
+## Recommended:
+npm install --save-dev css-width-scale-dc
+npm i --save @fortawesome/fontawesome-free
+```
+
+Add CSS/SASS:
+```css
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../node_modules/css-width-scale-dc/css/css-width-scale.css";
+```
+
+Replace default view:
+
+```sh
+sed -i 's|live "/", PageLive, :index|live "/", SurfaceWidgetsLive, :index|'  lib/*_web/router.ex
+rm lib/surface_bulma_widgets_playground_web/live/page_live.ex
+rm lib/surface_bulma_widgets_playground_web/live/page_live.html.leex
 ```
