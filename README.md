@@ -12,6 +12,15 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## Setting Up Bulma, Surface, and Surface Bulma Widgets
 
+Add mix deps:
+
+```elixir
+      {:surface, "~> 0.4.0"},
+      {:surface_bulma_widgets, "~> 0.1.0", path: "../surface_bulma_widgets"},
+```
+
+Add CSS deps:
+
 ```sh
 npm install bulma
 npm install bulma-extensions
