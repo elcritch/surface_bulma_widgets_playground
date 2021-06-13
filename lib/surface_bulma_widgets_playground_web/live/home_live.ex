@@ -37,10 +37,13 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               <NumberButton id="ndl2.3" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
             </Flexer>
 
-            <Flexer direction="column" width=10>
+            <Flexer id="f3" direction="row" justify="space-evenly" align="right" align_items="top" classes={{["has-text-centered"]}} >
               <NumberFlex id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
-              <NumberFlex id="ndl3" name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberFlex id="ndl3" name="Cnt 2" value={{bind(@count2)}} digits=1/>
               <NumberFlex id="ndl4" name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberFlex id="ndl5" name="Count 3" value={{bind(@count2)}} digits=1/>
+              <NumberFlex id="ndl6" name="Count 44" value={{bind(@count2)}} digits=1/>
+              <NumberFlex id="ndl7" name="Count 44" value={{bind(@count2)}} digits=1/>
             </Flexer>
 
             <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
