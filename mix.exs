@@ -45,6 +45,7 @@ defmodule SurfaceBulmaWidgetsPlayground.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
+      {:exsync, "~> 0.2", only: :dev},
       {:plug_cowboy, "~> 2.0"}
     ]
   end

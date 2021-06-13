@@ -34,6 +34,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Flexer direction="column">
               <NumberButton id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberButton id="ndl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberButton id="ndl2.3" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
             </Flexer>
 
             <Flexer direction="column" width=10>
