@@ -52,6 +52,12 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               Start building <strong>rich interactive user-interfaces</strong>,
               writing minimal custom Javascript now. For a quick start, choose one of the
               boilerplates projects or install Surface from scratch.
+              <Flexer direction="column" justify="right" align="right" classes={{["px-2", "py-1"]}}>
+                <NumberButton id="ndl3.1" rounded="left" name="Count 1a" value={{bind(@count2)}} digits=1/>
+                <NumberButton id="ndl3.2" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
+                <NumberButton id="ndl3.3" rounded="left" name="Count 2a" value={{bind(@count2)}} digits=1/>
+              </Flexer>
+
             </p>
             <p><LiveRedirect to="/getting_started">Learn more</LiveRedirect></p>
           </CardWithIcon>
