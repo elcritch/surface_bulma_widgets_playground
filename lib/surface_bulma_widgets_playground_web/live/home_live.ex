@@ -9,8 +9,9 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   alias SurfaceBulmaWidgets.Components.CardWithIcon
   alias SurfaceBulmaWidgets.Layouts.{Columns, Column}
 
+  alias SurfaceBulmaWidgets.UI.Flexer
   alias SurfaceBulmaWidgets.UI.RangedSlider
-  alias SurfaceBulmaWidgets.UI.NumberDisplay
+  alias SurfaceBulmaWidgets.UI.{NumberButton, NumberFlex}
 
   data count1, :integer, default: 10
   data count2, :integer, default: 80
@@ -18,6 +19,31 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   def render(assigns) do
     ~H"""
       <Columns multiline>
+        <Column width=6>
+          <CardWithIcon icon="fa-code" title="UI Components">
+            <p>
+              A set of common components that can be used in
+              your projects, including buttons, dialogs, table grids
+              and more. You can also use them as templates to
+              create your own custom components.
+            </p>
+
+            <RangedSlider id="rl1" var={{bind(@count1)}}/>
+            <RangedSlider id="rl2" var={{bind(@count2)}}/>
+
+            <Flexer direction="column">
+              <NumberButton id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberButton id="ndl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=1/>
+            </Flexer>
+
+            <Flexer direction="column" classes={{["is-1"]}}>
+              <NumberFlex id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberFlex id="ndl3" name="Count 2" value={{bind(@count2)}} digits=1/>
+            </Flexer>
+
+            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
+          </CardWithIcon>
+        </Column>
         <Column width=4>
           <CardWithIcon icon="fa-power-off" title="Getting started">
             <p>
@@ -36,34 +62,6 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               help you to get started.
             </p>
             <p><LiveRedirect label="Learn more" to="/documentation" /></p>
-          </CardWithIcon>
-        </Column>
-        <Column width=4>
-          <CardWithIcon icon="fa-code" title="UI Components">
-            <p>
-              A set of common components that can be used in
-              your projects, including buttons, dialogs, table grids
-              and more. You can also use them as templates to
-              create your own custom components.
-            </p>
-            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
-          </CardWithIcon>
-        </Column>
-        <Column width=6>
-          <CardWithIcon icon="fa-code" title="UI Components">
-            <p>
-              A set of common components that can be used in
-              your projects, including buttons, dialogs, table grids
-              and more. You can also use them as templates to
-              create your own custom components.
-            </p>
-
-            <RangedSlider id="rl1" var={{bind(@count1)}}/>
-            <RangedSlider id="rl2" var={{bind(@count2)}}/>
-
-            <NumberDisplay id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
-
-            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
           </CardWithIcon>
         </Column>
       </Columns>
