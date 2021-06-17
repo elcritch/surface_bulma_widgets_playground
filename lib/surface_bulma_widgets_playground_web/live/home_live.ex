@@ -11,6 +11,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
   alias SurfaceBulmaWidgets.UI.Flexer
   alias SurfaceBulmaWidgets.UI.RangedSlider
+  alias SurfaceBulmaWidgets.UI.Dropdown
   alias SurfaceBulmaWidgets.UI.{NumberButton, NumberFlex}
 
   data count1, :integer, default: 10
@@ -31,7 +32,10 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <RangedSlider id="rl1" var={{bind(@count1)}}/>
             <RangedSlider id="rl2" var={{bind(@count2)}}/>
 
-            <Flexer direction="column">
+            <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={{bind(@count2)}} items={{[400, 500, 600]}} />
+            <Dropdown id="d2" var={{bind(@count2)}} hoverable=true integers=true items={{[400, 500, 600]}} />
+
+            <Flexer id="f1" direction="column">
               <NumberButton id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberButton id="ndl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberButton id="ndl2.3" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
@@ -60,6 +64,8 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
                 <NumberButton id="ndl3.2" rounded="left" name="Cnt 2" value={{bind(@count2)}} digits=1/>
                 <NumberButton id="ndl3.3" rounded="left" name="Count 2a" value={{bind(@count2)}} digits=1/>
               </Flexer>
+
+              <Dropdown id="ndl3.4" text="Test Freq" value={{bind(@count2)}} />
 
             </p>
             <p><LiveRedirect to="/getting_started">Learn more</LiveRedirect></p>
