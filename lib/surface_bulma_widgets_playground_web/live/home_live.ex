@@ -16,6 +16,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
   data count1, :integer, default: 10
   data count2, :integer, default: 80
+  data count3, :number, default: 0.4
 
   def render(assigns) do
     ~H"""
@@ -29,9 +30,9 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               create your own custom components.
             </p>
 
-            <RangedSlider id="rl1" name="C1"
+            <RangedSlider id="rl1" name="C1" widths={{label: 4, number: 3, progress: 2}}
                 min=20 max=140 step=10 digits={{ [3,0] }} var={{bind(@count1)}}/>
-            <RangedSlider id="rl2" step={{0.5}} var={{bind(@count2)}}/>
+            <RangedSlider id="rl2" max={{1.0}} step={{0.1}} var={{bind(@count3)}}/>
 
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={{bind(@count2)}} items={{[400, 500, 600]}} />
             <Dropdown id="d2" var={{bind(@count2)}} hoverable=true integers=true items={{[400, 500, 600]}} />
