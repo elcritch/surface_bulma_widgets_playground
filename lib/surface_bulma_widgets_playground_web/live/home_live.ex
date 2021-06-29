@@ -12,7 +12,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   alias SurfaceBulmaWidgets.UI.Flexer
   alias SurfaceBulmaWidgets.UI.RangedSlider
   alias SurfaceBulmaWidgets.UI.Dropdown
-  alias SurfaceBulmaWidgets.UI.{NumberButton, NumberFlex}
+  alias SurfaceBulmaWidgets.UI.{NumberButton, NumberTag, NumberFlex}
 
   data count1, :integer, default: 10
   data count2, :integer, default: 80
@@ -35,12 +35,29 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={{bind(@count2)}} items={{[400, 500, 600]}} />
             <Dropdown id="d2" var={{bind(@count2)}} hoverable=true integers=true items={{[400, 500, 600]}} />
 
+            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
+          </CardWithIcon>
+
+          <CardWithIcon icon="fa-code" title="UI Components">
+            <p>
+              Various "Number" formats
+            </p>
+
+            <h2>Number Buttons</h2>
             <Flexer id="f1" direction="column">
               <NumberButton id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberButton id="ndl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberButton id="ndl2.3" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
             </Flexer>
 
+            <h2>Number Tags</h2>
+            <Flexer id="t1" direction="row" justify="space-evenly" align_items="flex-start">
+              <NumberTag id="nfl2" name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberTag id="nfl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=1/>
+              <NumberTag id="nfl2.3" rounded="left" name="Count 2" value={{bind(@count2)}} digits=1/>
+            </Flexer>
+
+            <h2>Number Flex</h2>
             <Flexer id="f3" direction="row" justify="space-evenly" align="right" align_items="top" classes={{["has-text-centered"]}} >
               <NumberFlex id="ndl2" name="Count 2" value={{bind(@count2)}} digits=1/>
               <NumberFlex id="ndl3" name="Cnt 2" value={{bind(@count2)}} digits=1/>
@@ -68,7 +85,9 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               <Dropdown id="ndl3.4" text="Test Freq" value={{bind(@count2)}} />
 
             </p>
-            <p><LiveRedirect to="/getting_started">Learn more</LiveRedirect></p>
+            <p>
+
+            <LiveRedirect to="/getting_started">Learn more</LiveRedirect></p>
           </CardWithIcon>
         </Column>
         <Column width=4>
