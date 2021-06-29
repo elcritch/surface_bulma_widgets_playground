@@ -16,10 +16,11 @@ const PhxRepeatClick = {
         const self = this;
 
         this.el.onmousedown = function () {
-            intv = setInterval(function () {
+            intv = setTimeout(function tick() {
                 console.log("phx-clicking");
                 self.pushEventTo(phxTarget, "clicking", dataFields);
-            }, 300);
+                intv = setTimeout(tick, 300); // (*)
+            }, 700);
         }
         this.el.onmouseup = function () {
             clearInterval(intv);
