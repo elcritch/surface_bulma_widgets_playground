@@ -49,14 +49,14 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
             <h2>Number Buttons</h2>
             <Flexer id="f1" direction="column">
-              <NumberButton id="ndl2" name="Count 1" value={{bind(@count1)}} digits="4.1"/>
+              <NumberButton id="ndl2" name="Count 1" value={{bind(@count1)}} digits="0.1"/>
               <NumberButton id="ndl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits=".2"/>
               <NumberButton id="ndl2.3" rounded="left" name="Count 3" value={{bind(@count3)}} digits="4.1"/>
             </Flexer>
 
             <h2>Number Tags</h2>
             <Flexer id="t1" direction="row" justify="space-evenly" align_items="flex-start">
-              <NumberTag id="nfl2" name="Count 1" value={{bind(@count1)}} digits="4.1" widths={{number: 3}}/>
+              <NumberTag id="nfl2" name="Count 1" value={{bind(@count1)}} digits="5.1" widths={{number: 3}}/>
               <NumberTag id="nfl2.1" rounded=true name="Count 2" value={{bind(@count2)}} digits="0.1"/>
               <NumberTag id="nfl2.3" rounded="left" name="Count 3" value={{bind(@count3)}} digits="0.1"/>
             </Flexer>
