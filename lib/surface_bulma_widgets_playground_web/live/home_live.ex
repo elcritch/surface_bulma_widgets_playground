@@ -7,12 +7,15 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
   use SurfaceBulmaWidgets
   alias SurfaceBulmaWidgets.Components.CardWithIcon
+  alias SurfaceBulmaWidgets.Components.Card
+  # alias SurfaceBulma.Modal.Card
   alias SurfaceBulmaWidgets.Layouts.{Columns, Column}
 
   alias SurfaceBulmaWidgets.UI.Flexer
   alias SurfaceBulmaWidgets.UI.RangedSlider
   alias SurfaceBulmaWidgets.UI.Dropdown
   alias SurfaceBulmaWidgets.UI.{NumberButton, NumberTag, NumberFlex}
+  alias SurfaceBulmaWidgets.Components.NumberEditor
 
   alias SurfaceBulma.Modal
 
@@ -24,7 +27,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
     ~H"""
       <Columns multiline>
         <Column width=6>
-          <CardWithIcon icon="fa-code" title="UI Components">
+          <Card icon="fa-code" title="UI Components">
             <p>
               A set of common components that can be used in
               your projects, including buttons, dialogs, table grids
@@ -39,8 +42,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={{bind(@count2)}} items={{[400, 500, 600]}} />
             <Dropdown id="d2" var={{bind(@count2)}} hoverable=true integers=true items={{[400, 500, 600]}} />
 
-            <p><LiveRedirect label="Learn more" to="/uicomponents" /></p>
-          </CardWithIcon>
+          </Card>
 
           <CardWithIcon icon="fa-code" title="UI Components">
             <p>
