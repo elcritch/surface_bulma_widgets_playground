@@ -23,6 +23,8 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   data count2, :integer, default: 80
   data count3, :number, default: 0.4
 
+  data num_editor, :boolean, default: false
+
   def render(assigns) do
     ~H"""
       <Columns multiline>
@@ -42,6 +44,8 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={{bind(@count2)}} items={{[400, 500, 600]}} />
             <Dropdown id="d2" var={{bind(@count2)}} hoverable=true integers=true items={{[400, 500, 600]}} />
 
+            <NumberEditor id="edi3" var={{bind @num_editor}}>
+            </NumberEditor>
           </Card>
 
           <CardWithIcon icon="fa-code" title="UI Components">
