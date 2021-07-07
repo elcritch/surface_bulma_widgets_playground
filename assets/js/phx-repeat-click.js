@@ -19,12 +19,24 @@ const PhxRepeatClick = {
             intv = setTimeout(function tick() {
                 console.log("phx-clicking");
                 self.pushEventTo(phxTarget, "clicking", dataFields);
-                intv = setTimeout(tick, 300); // (*)
+                intv = setTimeout(tick, 300);
             }, 700);
         }
         this.el.onmouseup = function () {
             clearInterval(intv);
         }
+
+        var tintv;
+        this.el.addEventListener('touchstart', function () {
+            tintv = setTimeout(function tick() {
+                console.log("touch: phx-clicking");
+                self.pushEventTo(phxTarget, "clicking", dataFields);
+                tintv = setTimeout(tick, 300);
+            }, 700);
+        });
+        this.el.addEventListener('touchend', function () {
+            clearInterval(tintv);
+        });
     }
 }
 
