@@ -14,8 +14,12 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   alias SurfaceBulmaWidgets.UI.Flexer
   alias SurfaceBulmaWidgets.UI.RangedSlider
   alias SurfaceBulmaWidgets.UI.Dropdown
+  alias SurfaceBulmaWidgets.UI.Select
+
   alias SurfaceBulmaWidgets.UI.{NumberButton, NumberTag, NumberFlex}
   alias SurfaceBulmaWidgets.Components.NumberEditor
+
+  alias SurfaceBulmaWidgets.UI.Forms.NumberInput
 
   alias SurfaceBulma.Modal
 
@@ -109,10 +113,21 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
               all the main features along with <strong>live examples</strong> and detailed explanation to
               help you to get started.
             </p>
+
+            <Select id="sl1" items={{["alpha", "beta", "gamma"]}}>
+            </Select>
+
+            <NumberInput id="ni1" >
+            </NumberInput>
           </CardWithIcon>
         </Column>
       </Columns>
     """
+  end
+
+  def handle_event(evt, data, socket) do
+    Logger.warn("unknown event: #{inspect evt} => #{inspect data}")
+    {:noreply, socket}
   end
 
 end
