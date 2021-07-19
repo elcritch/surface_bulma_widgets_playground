@@ -42,7 +42,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             </p>
 
             <RangedSlider id="rl1" name="C1" widths={label: 4, number: 3, progress: 2}
-                            min=20 max=140 step=10 digits="3.0" var={bind(@count1)}/>
+                            min={20} max={140} step=10 digits="3.0" var={bind(@count1)}/>
             <RangedSlider id="rl2" max={1.0} step={0.1} var={bind(@count3)}/>
 
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={bind(@count2)} items={[40, 50, 60]} />
