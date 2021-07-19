@@ -27,7 +27,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   data count2, :integer, default: 80
   data count3, :number, default: 0.4
 
-  data num_editor, :boolean, default: false
+  data num_editor, :number, default: 0.1
 
   def render(assigns) do
     ~F"""
@@ -48,7 +48,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={bind(@count2)} items={[40, 50, 60]} />
             <Dropdown id="d2" var={bind(@count2)} hoverable=true integers=true items={[40, 50, 60]} />
 
-            <ModalFieldEditor id="edi3" var={bind @num_editor}>
+            <ModalFieldEditor id="edi3" var={bind(@num_editor)}>
             </ModalFieldEditor>
           </Card>
 
