@@ -50,6 +50,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
 
             <ModalFieldEditor id="edi3" var={bind(@num_editor)}>
             </ModalFieldEditor>
+            <NumberTag id="edi4" name="Count 1" value={bind(@num_editor)} digits="5.1" widths={number: 3}/>
           </Card>
 
           <CardWithIcon icon="fa-code" title="UI Components">
