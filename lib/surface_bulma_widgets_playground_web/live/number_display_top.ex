@@ -15,13 +15,13 @@ defmodule SurfaceBulmaWidgets.UI.NumberDisplayTop do
   prop classes, :list, default: []
 
   def render(assigns) do
-    ~H"""
-      <article class="message px-1 my-1 is-small {{@classes}}" >
+    ~F"""
+      <article class="message px-1 my-1 is-small {@classes}" >
         <div class="message-header my-1 py-1 " >
-          {{ @name || @id }}
+          { @name || @id }
         </div>
         <div class="message-body m-1 p-1 " >
-          {{value(@value) |> format(@digits)}}
+          {value(@value) |> format(@digits)}
         </div>
       </article>
     """
