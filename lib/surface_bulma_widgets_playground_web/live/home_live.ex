@@ -32,7 +32,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
   def render(assigns) do
     ~F"""
       <Columns multiline>
-        <Column width=6>
+        <Column width={6} >
           <Card icon="fa-code" title="UI Components">
             <p>
               A set of common components that can be used in
@@ -45,8 +45,8 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
                             min={30} max={140} step={10} digits="3.0" var={bind(@count1)}/>
             <RangedSlider id="rl2" max={1.0} step={0.1} var={bind(@count3)}/>
 
-            <Dropdown id="d1" prefix="test: " hoverable=true integers=true var={bind(@count2)} items={[40, 50, 60]} />
-            <Dropdown id="d2" var={bind(@count2)} hoverable=true integers=true items={[40, 50, 60]} />
+            <Dropdown id="d1" prefix="test: " integers={true} var={bind(@count2)} items={[40, 50, 60]} />
+            <Dropdown id="d2" var={bind(@count2)} integers={true} items={[40, 50, 60]} />
 
             <ModalFieldEditor id="edi3" var={bind(@num_editor)}>
             </ModalFieldEditor>
@@ -61,15 +61,15 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <h2>Number Buttons</h2>
             <Flexer id="f1" direction="column">
               <NumberButton id="ndl2" name="Count 1" value={bind(@count1)} digits="0.1"/>
-              <NumberButton id="ndl2.1" rounded=true name="Count 2" value={bind(@count2)} digits=".2"/>
-              <NumberButton id="ndl2.3" rounded="left" name="Count 3" value={bind(@count3)} digits="4.1"/>
+              <NumberButton id="ndl2.1" rounded={true} name="Count 2" value={bind(@count2)} digits=".2"/>
+              <NumberButton id="ndl2.3" rounded={true} name="Count 3" value={bind(@count3)} digits="4.1"/>
             </Flexer>
 
             <h2>Number Tags</h2>
             <Flexer id="t1" direction="row" justify="space-evenly" align_items="flex-start">
               <NumberTag id="nfl2" name="Count 1" value={bind(@count1)} digits="5.0" widths={number: 3}/>
-              <NumberTag id="nfl2.1" rounded=true name="Count 2" value={bind(@count2)} digits="0.1"/>
-              <NumberTag id="nfl2.3" rounded="left" name="Count 3" value={bind(@count3)} digits="0.1"/>
+              <NumberTag id="nfl2.1" rounded={true} name="Count 2" value={bind(@count2)} digits="0.1"/>
+              <NumberTag id="nfl2.3" rounded={true} name="Count 3" value={bind(@count3)} digits="0.1"/>
             </Flexer>
 
             <h2>Number Flex</h2>
@@ -86,13 +86,13 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
           </CardWithIcon>
         </Column>
 
-        <Column width=4>
+        <Column width={4}>
           <CardWithIcon icon="fa-power-off" title="Getting started">
             <p>
               Start building <strong>rich interactive user-interfaces</strong>,
               writing minimal custom Javascript now. For a quick start, choose one of the
               boilerplates projects or install Surface from scratch.
-              <Flexer direction="column" justify="left" align="right" classes={["px-2", "py-1"]}>
+              <Flexer id="ndl3" direction="column" justify="left" align="right" classes={["px-2", "py-1"]}>
                 <NumberButton id="ndl3.1" rounded="left" name="Count 1a" value={bind(@count2)} />
                 <NumberButton id="ndl3.2" rounded="left" name="Cnt 2" value={bind(@count2)} />
                 <NumberButton id="ndl3.3" rounded="left" name="Count 2a" value={bind(@count2)} />
