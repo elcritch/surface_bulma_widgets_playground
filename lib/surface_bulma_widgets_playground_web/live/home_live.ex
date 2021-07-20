@@ -48,7 +48,7 @@ defmodule SurfaceBulmaWidgetsPlaygroundWeb.HomePageLive do
             <Dropdown id="d1" prefix="test: " integers={true} var={bind(@count2)} items={[40, 50, 60]} />
             <Dropdown id="d2" var={bind(@count2)} integers={true} items={[40, 50, 60]} />
 
-            <ModalFieldEditor id="edi3" var={bind(@num_editor)}>
+            <ModalFieldEditor id="edi3" title="Number Editor Value" var={bind(@num_editor)}>
             </ModalFieldEditor>
             <NumberTag id="edi4" name="Count 1" value={bind(@num_editor)} digits="5.1" widths={number: 3}/>
           </Card>
