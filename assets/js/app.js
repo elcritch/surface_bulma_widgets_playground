@@ -19,11 +19,12 @@ import {LiveSocket} from "phoenix_live_view"
 
 import PhoenixCustomEvent from "./phx-custom-evt"
 import PhxRepeatClick from "./phx-repeat-click"
+import PhxDoFocus  from "./phx-focus"
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {
     params: { _csrf_token: csrfToken },
-    hooks: { PhxRepeatClick }
+    hooks: { PhxRepeatClick, PhoenixCustomEvent, PhxDoFocus }
 })
 
 // Show progress bar on live navigation and form submits
